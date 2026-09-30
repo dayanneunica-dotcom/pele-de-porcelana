@@ -1,0 +1,27 @@
+LANDING PAGE · PELE DE PORCELANA EM 21 DIAS
+============================================
+
+1) ANTES DE PUBLICAR: edite o arquivo index.html (abra no Bloco de Notas ou no VS Code)
+   - Procure "CONFIGURAÇÃO: troque só aqui" (perto do final) e preencha:
+     checkout, preco, ancora, parcelas, plataforma, empresa (nome + CNPJ/CPF) e suporte (e-mail).
+   - Procure "PIXELS E TAGS" (no começo) e cole os códigos do Pixel da Meta, Google Tag, TikTok e Clarity.
+   - Troque "https://SEU-DOMINIO.com.br/" pelo seu domínio.
+   - Depoimentos: troque os textos entre [colchetes] por depoimentos REAIS. Enquanto tiverem [colchetes], ficam escondidos.
+   - termos.html e privacidade.html: preencha os [colchetes].
+
+2) FOTOS EM ALTA RESOLUÇÃO
+   As fotos da pasta img/ são uma prévia. Baixe as versões grandes no Canva (links na conversa),
+   salve com estes nomes e substitua na pasta img/ (formato .webp ou mude a extensão no index.html):
+   hero.webp · espelho.webp · bancada.webp · amigas.webp · final.webp
+
+3) PUBLICAR NA VERCEL (sem programar)
+   a) Crie conta grátis em github.com. Clique em "New repository", nome: pele-de-porcelana, marque Private, crie.
+   b) Clique em "uploading an existing file" e arraste TODO o conteúdo desta pasta (index.html, img, fonts, etc.). Clique em "Commit changes".
+   c) Entre em vercel.com com a conta do GitHub > "Add New… > Project" > escolha o repositório > "Deploy".
+   d) Pronto: a Vercel te dá um link .vercel.app. Para o seu domínio: Project > Settings > Domains > adicione peledeporcelana.com.br
+      e siga as instruções de DNS no Registro.br.
+   Toda vez que você alterar um arquivo no GitHub, a Vercel atualiza a página sozinha.
+
+4) TESTE A/B DA HEADLINE
+   Use no link do anúncio:  seudominio.com.br/?h=2   ou   ?h=3   (a versão normal é sem nada).
+   As UTMs do anúncio (utm_source, utm_campaign...) são repassadas automaticamente para o checkout.
