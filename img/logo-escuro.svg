@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="600" viewBox="0 0 1200 600">
+<rect width="1200" height="600" fill="#5B2633"/>
+<g transform="translate(600,150)">
+ <path d="M-46 70 V-10 A46 46 0 0 1 46 -10 V70 Z" fill="none" stroke="#F3DCD6" stroke-width="2.5"/>
+ <path d="M-36 62 V-8 A36 36 0 0 1 36 -8 V62 Z" fill="none" stroke="#E7B9B2" stroke-width="1.2"/>
+ <path d="M0 4 C12 20 16 30 16 38 A16 16 0 0 1 -16 38 C-16 30 -12 20 0 4 Z" fill="#F3DCD6" opacity=".9"/>
+ <circle cx="-5" cy="36" r="4" fill="#fff" opacity=".7"/>
+</g>
+<text x="600" y="330" text-anchor="middle" font-family="Bodoni Moda" font-size="104" font-weight="500" fill="#FBF1EE">Pele de <tspan font-style="italic" font-weight="400">Porcelana</tspan></text>
+<line x1="340" y1="398" x2="440" y2="398" stroke="#F3DCD6" stroke-width="1.5"/>
+<line x1="760" y1="398" x2="860" y2="398" stroke="#F3DCD6" stroke-width="1.5"/>
+<text x="600" y="420" text-anchor="middle" font-family="Pinyon Script" font-size="74" fill="#F3DCD6">em 21 dias</text>
+<text x="600" y="500" text-anchor="middle" font-family="Jost" font-size="22" font-weight="500" letter-spacing="9" fill="#FBF1EE">GUIA PRÁTICO DE SKINCARE</text>
+</svg>
