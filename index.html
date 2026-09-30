@@ -36,14 +36,18 @@
 @font-face{font-family:"Jost";font-style:normal;font-weight:400;font-display:swap;src:url(fonts/jost-latin-400-normal.woff2) format("woff2")}
 @font-face{font-family:"Jost";font-style:normal;font-weight:500;font-display:swap;src:url(fonts/jost-latin-500-normal.woff2) format("woff2")}
 @font-face{font-family:"Jost";font-style:normal;font-weight:600;font-display:swap;src:url(fonts/jost-latin-600-normal.woff2) format("woff2")}
+@font-face{font-family:"Playfair Display";font-style:normal;font-weight:700;font-display:swap;src:url(fonts/playfair-display-latin-700-normal.woff2) format("woff2")}
+@font-face{font-family:"Playfair Display";font-style:italic;font-weight:600;font-display:swap;src:url(fonts/playfair-display-latin-600-italic.woff2) format("woff2")}
+@font-face{font-family:"Playfair Display";font-style:italic;font-weight:800;font-display:swap;src:url(fonts/playfair-display-latin-800-italic.woff2) format("woff2")}
 @font-face{font-family:"Pinyon Script";font-style:normal;font-weight:400;font-display:swap;src:url(fonts/pinyon-script-latin-400-normal.woff2) format("woff2")}
 
 /* Layout: revista de beleza em coluna única no celular; fotos em arco; blocos alternando porcelana, rosa pó e vinho. */
 :root{
-  --porcelain:#FBF7F4; --blush:#F3DCD6; --blush-2:#F8EAE6; --rose:#B9716C; --wine:#5B2633; --wine-2:#3F1822;
-  --ink:#3A2E30; --muted:#7C6A6C; --glaze:#7F9BB3; --gold:#B08D5E; --line:#EBD8D2; --white:#FFFFFF;
+  --porcelain:#FBF7F4; --blush:#F3DCD6; --blush-2:#F8EAE6; --rose:#A65A57; --wine:#5B2633; --wine-2:#3F1822;
+  --ink:#3A2E30; --muted:#5E4A4E; --glaze:#7F9BB3; --gold:#B08D5E; --line:#EBD8D2; --white:#FFFFFF;
   --display:"Bodoni Moda","Didot","Bodoni 72",Georgia,serif;
   --body:"Jost","Avenir Next","Segoe UI",system-ui,sans-serif;
+  --logo:"Playfair Display",Georgia,serif;
   --script:"Pinyon Script","Snell Roundhand",cursive;
   color-scheme:light;
 }
@@ -57,47 +61,49 @@ h1,h2,h3{font-family:var(--display);font-weight:500;color:var(--wine);line-heigh
 h1{font-size:clamp(2.15rem,8.4vw,3.6rem);letter-spacing:-.01em}
 h2{font-size:clamp(1.85rem,6.6vw,2.7rem)}
 h3{font-size:1.3rem}
-h1 em,h2 em{font-style:italic;font-weight:400;color:var(--rose)}
+h1 em,h2 em{font-style:italic;font-weight:500;color:var(--rose)}
 p{margin:0}
 .wrap{width:100%;max-width:1080px;margin-inline:auto;padding-inline:20px}
 .narrow{max-width:680px}
 section{padding-block:64px}
 .center{text-align:center}
-.eyebrow{display:block;font-size:.74rem;letter-spacing:.24em;text-transform:uppercase;font-weight:600;color:var(--rose);margin-bottom:12px}
+.eyebrow{display:block;font-size:.8rem;letter-spacing:.24em;text-transform:uppercase;font-weight:600;color:var(--rose);margin-bottom:12px}
 .script{font-family:var(--script);color:var(--rose);font-weight:400}
-.lead{font-size:1.1rem;color:var(--muted)}
+.lead{font-size:1.14rem;color:var(--muted)}
 .stack>*+*{margin-top:1rem}
 
 /* botão */
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:58px;padding:16px 30px;border-radius:999px;background:var(--wine);color:#fff;text-decoration:none;font-weight:600;font-size:1rem;letter-spacing:.08em;text-transform:uppercase;box-shadow:0 10px 26px rgba(91,38,51,.28);text-align:center;width:100%;max-width:440px;transition:transform .2s ease,background .2s ease}
 .btn:hover{background:var(--wine-2);transform:translateY(-1px)}
 @media (prefers-reduced-motion:no-preference){.btn.breathe{animation:breathe 2.6s ease-in-out infinite}@keyframes breathe{0%,100%{transform:scale(1)}50%{transform:scale(1.035)}}}
-.btn-note{font-size:.84rem;color:var(--muted);margin-top:12px}
+.btn-note{font-size:.92rem;font-weight:500;color:var(--muted);margin-top:12px}
 .cta-block{display:flex;flex-direction:column;align-items:center;margin-top:34px}
 
 /* topo */
 .topbar{padding-block:18px 0}
 .logo{display:inline-flex;flex-direction:column;align-items:center;text-decoration:none;line-height:1}
-.logo .arch{width:22px;height:28px;border:1.5px solid var(--rose);border-radius:99px 99px 2px 2px;position:relative;margin-bottom:6px}
+.logo .arch{width:24px;height:30px;border:2px solid var(--rose);border-radius:99px 99px 2px 2px;position:relative;margin-bottom:6px}
 .logo .arch::after{content:"";position:absolute;left:50%;top:10px;width:8px;height:8px;background:var(--rose);border-radius:0 50% 50% 50%;transform:translateX(-50%) rotate(45deg)}
-.logo b{font-family:var(--display);font-weight:500;font-size:1.35rem;color:var(--wine)}
-.logo b i{font-weight:400}
-.logo span{font-family:var(--script);color:var(--rose);font-size:1.25rem;margin-top:2px}
+.logo b{font-family:var(--logo);font-weight:700;font-size:1.6rem;color:var(--wine);letter-spacing:-.005em}
+.logo b i{font-weight:600;color:var(--rose)}
+.logo span:not(.arch){font-family:var(--logo);font-style:italic;font-weight:600;color:var(--wine);font-size:1.15rem;margin-top:4px}
+.logo span strong{font-weight:800;font-size:1.5em;color:var(--rose);vertical-align:-.06em;margin:0 1px}
 
 /* hero */
 .hero{padding-block:22px 56px;overflow:hidden}
 .hero-grid{display:grid;gap:30px;align-items:center}
 .hero-copy{text-align:center}
-.hero-copy .sub{font-size:1.1rem;color:var(--ink);margin-top:18px}
+.hero-copy .sub{font-size:1.16rem;color:var(--ink);font-weight:500;margin-top:18px}
 .hero-art{position:relative;max-width:420px;margin-inline:auto;width:100%}
 .arch-photo{border-radius:999px 999px 24px 24px;overflow:hidden;aspect-ratio:4/5;background:var(--blush);box-shadow:0 20px 50px rgba(91,38,51,.14);max-width:100%}
 .arch-photo img{width:100%;height:100%;object-fit:cover}
-.hero-art .ebook{position:absolute;right:-6px;bottom:-22px;width:40%}
-.hero-art .badge{position:absolute;left:-4px;top:30%;background:#fff;border-radius:16px;padding:10px 14px;font-size:.8rem;line-height:1.3;box-shadow:0 10px 24px rgba(91,38,51,.14);color:var(--wine);max-width:150px}
+.hero-art .ebook{position:absolute;right:-14px;bottom:-26px;width:46%}
+.mockup{filter:drop-shadow(8px 16px 22px rgba(58,30,36,.30))}
+.hero-art .badge{position:absolute;left:-4px;top:30%;background:#fff;border-radius:16px;padding:10px 14px;font-size:.88rem;font-weight:500;line-height:1.3;box-shadow:0 10px 24px rgba(91,38,51,.14);color:var(--wine);max-width:150px}
 .hero-art .badge b{display:block;font-family:var(--display);font-size:1.1rem}
 .book3d{border-radius:4px 10px 10px 4px;overflow:hidden;box-shadow:-2px 0 0 #e7c9c1 inset,10px 18px 30px rgba(58,46,48,.28);transform:perspective(900px) rotateY(-12deg);background:#fff}
 .book3d img{width:100%}
-.trust{display:flex;justify-content:center;flex-wrap:wrap;gap:8px 18px;margin-top:18px;font-size:.82rem;color:var(--muted)}
+.trust{display:flex;justify-content:center;flex-wrap:wrap;gap:8px 18px;margin-top:18px;font-size:.9rem;color:var(--muted)}
 .trust span::before{content:"✓ ";color:var(--rose);font-weight:700}
 @media (min-width:860px){
   .hero-grid{grid-template-columns:1.05fr .95fr}
@@ -120,7 +126,7 @@ section{padding-block:64px}
 .myth{border-radius:18px;overflow:hidden;border:1px solid var(--line);background:#fff;display:grid}
 @media (min-width:720px){.myth{grid-template-columns:1fr 1.4fr}}
 .myth .m{padding:16px 18px;background:#F6ECEA;color:var(--muted);text-decoration:line-through;text-decoration-color:rgba(185,113,108,.6)}
-.myth .m b,.myth .v b{display:block;font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;text-decoration:none;margin-bottom:4px}
+.myth .m b,.myth .v b{display:block;font-size:.76rem;letter-spacing:.2em;text-transform:uppercase;text-decoration:none;margin-bottom:4px}
 .myth .m b{color:#A4432E;display:inline-block}
 .myth .v{padding:16px 18px}
 .myth .v b{color:#4E8A6A}
@@ -130,6 +136,7 @@ section{padding-block:64px}
 .product-grid{display:grid;gap:34px;align-items:center;margin-top:34px}
 @media (min-width:860px){.product-grid{grid-template-columns:.9fr 1.1fr}}
 .devices{position:relative;max-width:340px;margin-inline:auto;width:100%;padding-bottom:20px}
+.devices .book{width:88%}
 .tablet{background:#2B2426;border-radius:26px;padding:12px;box-shadow:0 24px 50px rgba(58,46,48,.25)}
 .tablet img{border-radius:14px}
 .phone{position:absolute;right:-8px;bottom:0;width:36%;background:#2B2426;border-radius:22px;padding:6px;box-shadow:0 18px 36px rgba(58,46,48,.3)}
@@ -163,12 +170,12 @@ section{padding-block:64px}
 .app h2{color:#fff}
 .app h2 em{color:#F3C9C1}
 .app .eyebrow{color:#E7B9B2}
-.app .lead{color:#E5CFCA}
+.app .lead{color:#F3E4E0}
 .app-grid{display:grid;gap:34px;align-items:center;margin-top:30px}
 @media (min-width:860px){.app-grid{grid-template-columns:.8fr 1.2fr}}
 .mock{width:250px;max-width:100%;margin-inline:auto;background:#1a1416;border-radius:36px;padding:10px;box-shadow:0 30px 60px rgba(0,0,0,.35)}
 .screen{background:#FBF5F2;border-radius:28px;overflow:hidden;color:#3A2A2C;font-size:11px;line-height:1.4;padding:16px 12px 12px}
-.screen .br{font-family:var(--display);font-style:italic;color:#9C5650;font-size:12px}
+.screen .br{font-family:var(--logo);font-style:italic;font-weight:600;color:#9C5650;font-size:12.5px}
 .screen .hd{display:flex;gap:10px;align-items:center;margin:10px 0 12px}
 .screen .ring{width:52px;height:52px;border-radius:50%;background:conic-gradient(#B96F68 0 14%,#EAD9D2 14% 100%);display:grid;place-items:center;flex:none}
 .screen .ring b{width:42px;height:42px;border-radius:50%;background:#FBF5F2;display:grid;place-items:center;font-family:var(--display);font-size:18px;font-weight:400}
@@ -191,8 +198,8 @@ section{padding-block:64px}
 .pages{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding:6px 20px 18px;margin-inline:-20px;margin-top:28px;-webkit-overflow-scrolling:touch}
 .pages figure{flex:0 0 62%;max-width:280px;margin:0;scroll-snap-align:center}
 .pages img{border-radius:10px;box-shadow:0 12px 28px rgba(58,46,48,.16);border:1px solid var(--line)}
-.pages figcaption{font-size:.82rem;color:var(--muted);text-align:center;margin-top:8px}
-.swipe{font-size:.8rem;color:var(--muted);text-align:center}
+.pages figcaption{font-size:.9rem;font-weight:500;color:var(--muted);text-align:center;margin-top:8px}
+.swipe{font-size:.88rem;color:var(--muted);text-align:center}
 .numbers{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:22px}
 .numbers span{background:#fff;border:1px solid var(--line);border-radius:999px;padding:8px 16px;font-size:.9rem;color:var(--wine)}
 .numbers b{font-family:var(--display);font-size:1.15rem;margin-right:4px}
@@ -201,17 +208,17 @@ section{padding-block:64px}
 .testi .who{display:flex;gap:10px;align-items:center;margin-bottom:10px}
 .testi .av{width:40px;height:40px;border-radius:50%;background:var(--blush);display:grid;place-items:center;font-family:var(--display);color:var(--wine)}
 .testi .who b{display:block;font-size:.95rem}
-.testi .who small{color:var(--muted);font-size:.78rem}
+.testi .who small{color:var(--muted);font-size:.85rem}
 .testi .bubble{background:#DCF8C6;border-radius:14px 14px 14px 4px;padding:10px 12px;font-size:.95rem}
-.testi .theme{display:inline-block;margin-top:10px;font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--rose);font-weight:600}
+.testi .theme{display:inline-block;margin-top:10px;font-size:.76rem;letter-spacing:.14em;text-transform:uppercase;color:var(--rose);font-weight:600}
 .seals{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:26px}
 .seals span{display:inline-flex;align-items:center;gap:8px;font-size:.85rem;color:var(--wine);border:1px dashed var(--rose);border-radius:12px;padding:8px 12px}
 
 /* oferta */
 .offer{background:var(--blush)}
 .offer-card{max-width:560px;margin:30px auto 0;background:#fff;border-radius:28px;padding:30px 22px;box-shadow:0 24px 60px rgba(91,38,51,.16);border:2px solid var(--rose);text-align:center;position:relative}
-.offer-card .ribbon{position:absolute;top:-15px;left:50%;transform:translateX(-50%);background:var(--rose);color:#fff;font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;font-weight:600;padding:6px 16px;border-radius:999px;white-space:nowrap}
-.offer-card img{width:130px;margin:6px auto 18px}
+.offer-card .ribbon{position:absolute;top:-15px;left:50%;transform:translateX(-50%);background:var(--rose);color:#fff;font-size:.78rem;letter-spacing:.18em;text-transform:uppercase;font-weight:600;padding:6px 16px;border-radius:999px;white-space:nowrap}
+.offer-card img{width:180px;margin:10px auto 20px}
 .offer-list{list-style:none;padding:0;margin:0 0 22px;text-align:left;display:grid;gap:8px}
 .offer-list li{display:grid;grid-template-columns:24px 1fr;gap:8px;padding-bottom:8px;border-bottom:1px dashed var(--line)}
 .offer-list li::before{content:"✓";color:#4E8A6A;font-weight:700}
@@ -228,7 +235,7 @@ section{padding-block:64px}
 @media (min-width:640px){.guarantee{grid-template-columns:150px 1fr}}
 .seal{width:150px;height:150px;margin-inline:auto;border-radius:50%;background:radial-gradient(circle,#fff 55%,var(--blush) 56%);border:2px solid var(--gold);display:grid;place-items:center;text-align:center;color:var(--wine);font-family:var(--display);line-height:1}
 .seal b{display:block;font-size:3rem;font-weight:500}
-.seal small{font-family:var(--body);font-size:.66rem;letter-spacing:.2em;text-transform:uppercase}
+.seal small{font-family:var(--body);font-size:.72rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase}
 
 /* faq */
 .faq{max-width:720px;margin:30px auto 0;display:grid;gap:10px}
@@ -245,11 +252,12 @@ section{padding-block:64px}
 @media (min-width:860px){.final-grid{grid-template-columns:.8fr 1.2fr}}
 .final .arch-photo{max-width:340px;margin-inline:auto;width:100%}
 
-footer{background:var(--wine-2);color:#D9B9B3;padding-block:40px 110px;font-size:.85rem;text-align:center}
+footer{background:var(--wine-2);color:#EBD3CE;padding-block:40px 110px;font-size:.9rem;text-align:center}
 footer .logo b{color:#fff}
 footer .logo .arch{border-color:#F3DCD6}
 footer .logo .arch::after{background:#F3DCD6}
-footer .logo span{color:#F3C9C1}
+footer .logo span:not(.arch){color:#F3DCD6}
+footer .logo b i,footer .logo span strong{color:#F3C9C1}
 footer a{color:#F3DCD6}
 footer nav{display:flex;justify-content:center;gap:18px;margin:18px 0}
 footer p+p{margin-top:8px}
@@ -257,7 +265,7 @@ footer p+p{margin-top:8px}
 /* barra fixa no celular */
 .sticky{position:fixed;left:0;right:0;bottom:0;z-index:50;background:rgba(251,247,244,.96);backdrop-filter:blur(8px);border-top:1px solid var(--line);padding:10px 16px calc(10px + env(safe-area-inset-bottom,0px));display:flex;align-items:center;gap:12px;transform:translateY(110%);transition:transform .3s ease}
 .sticky.show{transform:none}
-.sticky .p{line-height:1.15;font-size:.78rem;color:var(--muted);flex:none}
+.sticky .p{line-height:1.15;font-size:.84rem;color:var(--muted);flex:none}
 .sticky .p b{display:block;font-family:var(--display);font-size:1.35rem;color:var(--wine)}
 .sticky .btn{min-height:50px;padding:12px 16px;font-size:.82rem;box-shadow:none;flex:1}
 @media (min-width:860px){.sticky{display:none}}
@@ -270,7 +278,7 @@ footer p+p{margin-top:8px}
   <a class="logo" href="#" aria-label="Pele de Porcelana em 21 dias">
     <span class="arch" aria-hidden="true"></span>
     <b>Pele de <i>Porcelana</i></b>
-    <span>em 21 dias</span>
+    <span>em <strong>21</strong> dias</span>
   </a>
 </header>
 
@@ -288,7 +296,7 @@ footer p+p{margin-top:8px}
     <div class="hero-art">
       <div class="arch-photo"><img src="img/hero.webp" alt="Mulher sorrindo aplicando creme hidratante no rosto" width="560" height="700"></div>
       <div class="badge"><b>21 dias</b>de rotina guiada, passo a passo</div>
-      <div class="ebook"><div class="book3d"><img src="img/capa.webp" alt="Capa do e-book Pele de Porcelana em 21 Dias" width="380" height="538"></div></div>
+      <div class="ebook"><img class="mockup" src="img/capa-mockup.webp" alt="E-book Pele de Porcelana em 21 Dias" width="676" height="1045"></div>
     </div>
   </div>
 </section>
@@ -337,7 +345,7 @@ footer p+p{margin-top:8px}
     </div>
     <div class="product-grid">
       <div class="devices">
-        <div class="tablet"><img src="img/capa.webp" alt="E-book aberto no tablet" loading="lazy" width="760" height="1076"></div>
+        <div class="book"><img class="mockup" src="img/capa-mockup.webp" alt="E-book Pele de Porcelana em 21 Dias" loading="lazy" width="676" height="1045"></div>
         <div class="phone"><img src="img/pag-manha-noite.webp" alt="Página da rotina manhã e noite no celular" loading="lazy" width="760" height="1076"></div>
       </div>
       <div class="chapters">
@@ -460,7 +468,7 @@ footer p+p{margin-top:8px}
     <div class="center"><span class="eyebrow">Oferta especial</span><h2>Tudo o que você <em>recebe hoje</em></h2></div>
     <div class="offer-card">
       <span class="ribbon">Acesso imediato</span>
-      <img src="img/capa.webp" alt="" loading="lazy" width="380" height="538">
+      <img class="mockup" src="img/capa-mockup.webp" alt="E-book Pele de Porcelana em 21 Dias" loading="lazy" width="676" height="1045">
       <ul class="offer-list">
         <li>E-book Pele de Porcelana em 21 Dias (47 páginas)</li>
         <li>Quiz e testes de tipo de pele</li>
@@ -520,7 +528,7 @@ footer p+p{margin-top:8px}
 
 <footer>
   <div class="wrap">
-    <a class="logo" href="#topo" aria-label="Voltar ao topo"><span class="arch" aria-hidden="true"></span><b>Pele de <i>Porcelana</i></b><span>em 21 dias</span></a>
+    <a class="logo" href="#topo" aria-label="Voltar ao topo"><span class="arch" aria-hidden="true"></span><b>Pele de <i>Porcelana</i></b><span>em <strong>21</strong> dias</span></a>
     <nav><a href="termos.html">Termos de uso</a><a href="privacidade.html">Política de privacidade</a></nav>
     <p>Este material é educativo e não substitui a consulta com dermatologista. Os resultados variam de pessoa para pessoa.</p>
     <p><span data-company>[SEU NOME OU EMPRESA] · CNPJ/CPF [000.000.000-00]</span></p>
