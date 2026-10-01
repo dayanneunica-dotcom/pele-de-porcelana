@@ -278,6 +278,8 @@ footer p+p{margin-top:8px}
 /* barra de urgência */
 .urgency{position:sticky;top:0;z-index:60;background:linear-gradient(90deg,#9E1B24,#C62A2F,#9E1B24);color:#fff;text-align:center;padding:9px 14px;font-size:.92rem;font-weight:600;line-height:1.3;box-shadow:0 4px 14px rgba(158,27,36,.35);display:flex;justify-content:center;align-items:center;gap:6px 12px;flex-wrap:wrap}
 .urgency .clock{display:inline-flex;gap:4px;align-items:center}
+.urgency>span:first-child{text-wrap:balance}
+@media (max-width:600px){.urgency{font-size:.8rem;padding:7px 12px;gap:4px 8px}.urgency .clock b{font-size:.9rem;min-width:30px}}
 .urgency .clock b{background:#fff;color:#9E1B24;border-radius:6px;min-width:34px;padding:2px 5px;font-variant-numeric:tabular-nums;font-size:1rem}
 @media (prefers-reduced-motion:no-preference){.urgency .dot{animation:blink 1s steps(2) infinite}@keyframes blink{50%{opacity:0}}}
 
@@ -308,7 +310,7 @@ footer p+p{margin-top:8px}
 </style>
 </head>
 <body>
-<div class="urgency" role="status"><span><span class="dot">●</span> Preço promocional de lançamento: R$ 37 só hoje.</span><span class="clock">Termina em <b data-h>00</b>:<b data-m>00</b>:<b data-s>00</b></span></div>
+<div class="urgency" role="status"><span><span class="dot">●</span> Resgate seu guia de skincare em 10 minutos e garanta o acesso exclusivo à comunidade Bela Pele Brasil.</span><span class="clock"><b data-m>10</b>:<b data-s>00</b></span></div>
 
 <!-- ============ 1. HERO ============ -->
 <header class="topbar wrap center">
@@ -620,11 +622,13 @@ var CONFIG = {
     });
   });
 
-  // contagem regressiva até meia-noite (horário de quem visita)
-  var hh=document.querySelector("[data-h]"),mm=document.querySelector("[data-m]"),ss=document.querySelector("[data-s]");
-  function tick(){var n=new Date(),e=new Date(n);e.setHours(24,0,0,0);var d=Math.max(0,Math.floor((e-n)/1000));
-    hh.textContent=String(Math.floor(d/3600)).padStart(2,"0");mm.textContent=String(Math.floor(d%3600/60)).padStart(2,"0");ss.textContent=String(d%60).padStart(2,"0");}
-  if(hh){tick();setInterval(tick,1000);}
+  // contagem regressiva de 10 minutos (continua de onde parou se a pessoa recarregar a página)
+  var mm=document.querySelector("[data-m]"),ss=document.querySelector("[data-s]"),end;
+  try{end=parseInt(sessionStorage.getItem("pp_end"),10);}catch(e){}
+  if(!end||end<Date.now()-1000){end=Date.now()+10*60*1000;try{sessionStorage.setItem("pp_end",end);}catch(e){}}
+  function tick(){var d=Math.max(0,Math.ceil((end-Date.now())/1000));
+    mm.textContent=String(Math.floor(d/60)).padStart(2,"0");ss.textContent=String(d%60).padStart(2,"0");}
+  if(mm){tick();setInterval(tick,1000);}
 
   // teste A/B da headline: adicione ?h=2 ou ?h=3 no link do anúncio
   var H={"2":'Imagine sair de casa só com protetor e ouvir: <em>"o que você fez na sua pele?"</em>',
