@@ -274,6 +274,30 @@ footer a{color:#F3DCD6}
 footer nav{display:flex;justify-content:center;gap:18px;margin:18px 0}
 footer p+p{margin-top:8px}
 
+
+/* barra de urgência */
+.urgency{position:sticky;top:0;z-index:60;background:linear-gradient(90deg,#9E1B24,#C62A2F,#9E1B24);color:#fff;text-align:center;padding:9px 14px;font-size:.92rem;font-weight:600;line-height:1.3;box-shadow:0 4px 14px rgba(158,27,36,.35);display:flex;justify-content:center;align-items:center;gap:6px 12px;flex-wrap:wrap}
+.urgency .clock{display:inline-flex;gap:4px;align-items:center}
+.urgency .clock b{background:#fff;color:#9E1B24;border-radius:6px;min-width:34px;padding:2px 5px;font-variant-numeric:tabular-nums;font-size:1rem}
+@media (prefers-reduced-motion:no-preference){.urgency .dot{animation:blink 1s steps(2) infinite}@keyframes blink{50%{opacity:0}}}
+
+/* rolagem de frases */
+.voices{margin:34px -20px 0;overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
+.voices-title{font-family:var(--logo);font-style:italic;font-weight:600;color:var(--wine);font-size:1.35rem;text-align:center;margin-top:38px}
+.voices-sub{text-align:center;color:var(--muted);font-size:.92rem;margin-top:4px}
+.v-row{display:flex;gap:14px;width:max-content;padding:8px 0}
+.v-row+.v-row{margin-top:6px}
+.v-card{width:270px;flex:none;background:#fff;border:1px solid var(--line);border-radius:18px;padding:14px 16px;box-shadow:0 8px 20px rgba(91,38,51,.07)}
+.v-card p{background:#DCF8C6;border-radius:14px 14px 14px 4px;padding:10px 12px;font-size:.95rem;line-height:1.4;color:#1f2a1f}
+.v-card span{display:block;margin-top:8px;font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;font-weight:600;color:var(--rose)}
+@media (prefers-reduced-motion:no-preference){
+ .v-row{animation:marquee 46s linear infinite}
+ .v-row.rev{animation-direction:reverse;animation-duration:52s}
+ .voices:hover .v-row{animation-play-state:paused}
+ @keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+}
+@media (prefers-reduced-motion:reduce){.voices{overflow-x:auto}}
+
 /* barra fixa no celular */
 .sticky{position:fixed;left:0;right:0;bottom:0;z-index:50;background:rgba(251,247,244,.96);backdrop-filter:blur(8px);border-top:1px solid var(--line);padding:10px 16px calc(10px + env(safe-area-inset-bottom,0px));display:flex;align-items:center;gap:12px;transform:translateY(110%);transition:transform .3s ease}
 .sticky.show{transform:none}
@@ -284,6 +308,7 @@ footer p+p{margin-top:8px}
 </style>
 </head>
 <body>
+<div class="urgency" role="status"><span><span class="dot">●</span> Preço promocional de lançamento: R$ 37 só hoje.</span><span class="clock">Termina em <b data-h>00</b>:<b data-m>00</b>:<b data-s>00</b></span></div>
 
 <!-- ============ 1. HERO ============ -->
 <header class="topbar wrap center">
@@ -326,7 +351,11 @@ footer p+p{margin-top:8px}
       <div class="pain"><i>🔍</i><p>Nem sabe qual é o seu tipo de pele: oleosa, seca, mista?</p></div>
       <div class="pain"><i>💸</i><p>Já ouviu mil vezes que skincare de verdade é coisa de rica.</p></div>
     </div>
-    <div class="pain-photo"><div class="arch-photo"><img src="img/espelho.webp" alt="Mulher observando a pele no espelho" loading="lazy" width="560" height="700"></div></div>
+    <p class="voices-title">Daqui a 21 dias, é você quem vai dizer:</p>
+    <div class="voices" aria-label="Frases do que você vai conquistar com o guia">
+      <div class="v-row"><div class="v-card"><p>"Nossa, eu adorei! Agora faço meu skincare todos os dias e nem sinto que é obrigação."</p><span>Rotina diária</span></div><div class="v-card"><p>"Eu tinha muitas manchas de espinha. Aprendi a usar os ácidos e já estão bem mais clarinhas."</p><span>Ácidos sem medo</span></div><div class="v-card"><p>"Eu até imprimi o checklist e colei no espelho pra não esquecer de fazer."</p><span>Checklist</span></div><div class="v-card"><p>"Parei de gastar com produto errado. Minha rotina inteira saiu mais barata que um sérum."</p><span>Economia</span></div><div class="v-card" aria-hidden="true"><p>"Nossa, eu adorei! Agora faço meu skincare todos os dias e nem sinto que é obrigação."</p><span>Rotina diária</span></div><div class="v-card" aria-hidden="true"><p>"Eu tinha muitas manchas de espinha. Aprendi a usar os ácidos e já estão bem mais clarinhas."</p><span>Ácidos sem medo</span></div><div class="v-card" aria-hidden="true"><p>"Eu até imprimi o checklist e colei no espelho pra não esquecer de fazer."</p><span>Checklist</span></div><div class="v-card" aria-hidden="true"><p>"Parei de gastar com produto errado. Minha rotina inteira saiu mais barata que um sérum."</p><span>Economia</span></div></div>
+      <div class="v-row rev"><div class="v-card"><p>"Finalmente descobri que minha pele é mista. Tudo fez sentido!"</p><span>Tipo de pele</span></div><div class="v-card"><p>"Saí só de protetor com cor e minha amiga perguntou o que eu fiz na pele."</p><span>Elogios</span></div><div class="v-card"><p>"Hoje sei exatamente o que passar de manhã e à noite, sem ficar na dúvida."</p><span>Manhã e noite</span></div><div class="v-card"><p>"Minha pele oleosa parou de brilhar no meio da tarde."</p><span>Pele oleosa</span></div><div class="v-card" aria-hidden="true"><p>"Finalmente descobri que minha pele é mista. Tudo fez sentido!"</p><span>Tipo de pele</span></div><div class="v-card" aria-hidden="true"><p>"Saí só de protetor com cor e minha amiga perguntou o que eu fiz na pele."</p><span>Elogios</span></div><div class="v-card" aria-hidden="true"><p>"Hoje sei exatamente o que passar de manhã e à noite, sem ficar na dúvida."</p><span>Manhã e noite</span></div><div class="v-card" aria-hidden="true"><p>"Minha pele oleosa parou de brilhar no meio da tarde."</p><span>Pele oleosa</span></div></div>
+    </div>
     <p class="closing">A culpa não é sua. Ninguém nunca te explicou o passo a passo.</p>
   </div>
 </section>
@@ -590,6 +619,12 @@ var CONFIG = {
       try{ if(window.gtag) gtag("event","begin_checkout",{value:parseFloat(CONFIG.preco.replace(",",".")),currency:"BRL"}); }catch(e){}
     });
   });
+
+  // contagem regressiva até meia-noite (horário de quem visita)
+  var hh=document.querySelector("[data-h]"),mm=document.querySelector("[data-m]"),ss=document.querySelector("[data-s]");
+  function tick(){var n=new Date(),e=new Date(n);e.setHours(24,0,0,0);var d=Math.max(0,Math.floor((e-n)/1000));
+    hh.textContent=String(Math.floor(d/3600)).padStart(2,"0");mm.textContent=String(Math.floor(d%3600/60)).padStart(2,"0");ss.textContent=String(d%60).padStart(2,"0");}
+  if(hh){tick();setInterval(tick,1000);}
 
   // teste A/B da headline: adicione ?h=2 ou ?h=3 no link do anúncio
   var H={"2":'Imagine sair de casa só com protetor e ouvir: <em>"o que você fez na sua pele?"</em>',
