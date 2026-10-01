@@ -15,7 +15,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preload" href="fonts/bodoni-moda-latin-500-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="fonts/jost-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="img/hero.webp" as="image">
+<link rel="preload" href="img/novo1.webp" as="image">
 
 <!-- ===================== PIXELS E TAGS =====================
   Cole aqui, entre as linhas, os códigos que a Meta, o Google e o TikTok te derem.
@@ -300,6 +300,26 @@ footer p+p{margin-top:8px}
 }
 @media (prefers-reduced-motion:reduce){.voices{overflow-x:auto}}
 
+.brand-wall{position:relative;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;height:440px;max-width:520px;margin-inline:auto;width:100%;padding:0 14px;border-radius:28px;background:linear-gradient(160deg,#FBF4F1,#F3DCD6);box-shadow:0 20px 50px rgba(91,38,51,.14);overflow:hidden;
+ -webkit-mask-image:linear-gradient(180deg,transparent,#000 14%,#000 86%,transparent);mask-image:linear-gradient(180deg,transparent,#000 14%,#000 86%,transparent)}
+.bcol{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:12px;min-width:0}
+.bcol li{background:#fff;border:1px solid var(--line);border-radius:16px;min-height:88px;display:grid;place-items:center;text-align:center;padding:10px 8px;font-family:var(--logo);font-weight:700;font-size:1.05rem;line-height:1.15;color:var(--wine);box-shadow:0 8px 18px rgba(91,38,51,.07)}
+.bcol li:nth-child(3n+2){background:var(--wine);color:#fff;border-color:var(--wine)}
+.bcol li:nth-child(3n){font-style:italic;font-weight:600;color:var(--rose)}
+@media (prefers-reduced-motion:no-preference){
+ .bcol.up{animation:bup 18s linear infinite}
+ .bcol.down{animation:bdown 18s linear infinite}
+ .bcol.slow{animation-duration:22s}
+ .brand-wall:hover .bcol{animation-play-state:paused}
+ @keyframes bup{from{transform:translateY(0)}to{transform:translateY(calc(-50% - 6px))}}
+ @keyframes bdown{from{transform:translateY(calc(-50% - 6px))}to{transform:translateY(0)}}
+}
+@media (max-width:480px){.brand-wall{height:380px;gap:8px;padding:0 10px}.bcol li{font-size:.92rem;min-height:76px}}
+.brands-final .shelf{max-width:520px;margin-inline:auto;width:100%;border-radius:28px;box-shadow:0 20px 50px rgba(91,38,51,.14);overflow:hidden}
+.brand-chips{list-style:none;padding:0;margin:4px 0 0;display:flex;flex-wrap:wrap;gap:8px}
+.brand-chips li{background:#fff;border:1px solid var(--line);border-radius:999px;padding:6px 14px;font-size:.88rem;font-weight:600;color:var(--wine)}
+@media (max-width:859px){.brand-chips{justify-content:center}.brands-final .cta-block{align-items:center!important}.brands-final .stack{text-align:center}}
+
 /* barra fixa no celular */
 .sticky{position:fixed;left:0;right:0;bottom:0;z-index:50;background:rgba(251,247,244,.96);backdrop-filter:blur(8px);border-top:1px solid var(--line);padding:10px 16px calc(10px + env(safe-area-inset-bottom,0px));display:flex;align-items:center;gap:12px;transform:translateY(110%);transition:transform .3s ease}
 .sticky.show{transform:none}
@@ -333,7 +353,7 @@ footer p+p{margin-top:8px}
       </div>
     </div>
     <div class="hero-art">
-      <div class="arch-photo"><img src="img/hero.webp" alt="Mulher sorrindo aplicando creme hidratante no rosto" width="560" height="700"></div>
+      <div class="arch-photo"><img src="img/novo1.webp" alt="Mulher aplicando creme no rosto em frente ao espelho" width="277" height="406"></div>
       <div class="badge"><b>21 dias</b>de rotina guiada, passo a passo</div>
       <div class="ebook"><img class="mockup" src="img/capa-mockup.webp" alt="E-book Pele de Porcelana em 21 Dias" width="676" height="1045"></div>
     </div>
@@ -358,7 +378,6 @@ footer p+p{margin-top:8px}
       <div class="v-row"><div class="v-card"><p>"Nossa, eu adorei! Agora faço meu skincare todos os dias e nem sinto que é obrigação."</p><span>Rotina diária</span></div><div class="v-card"><p>"Eu tinha muitas manchas de espinha. Aprendi a usar os ácidos e já estão bem mais clarinhas."</p><span>Ácidos sem medo</span></div><div class="v-card"><p>"Eu até imprimi o checklist e colei no espelho pra não esquecer de fazer."</p><span>Checklist</span></div><div class="v-card"><p>"Parei de gastar com produto errado. Minha rotina inteira saiu mais barata que um sérum."</p><span>Economia</span></div><div class="v-card" aria-hidden="true"><p>"Nossa, eu adorei! Agora faço meu skincare todos os dias e nem sinto que é obrigação."</p><span>Rotina diária</span></div><div class="v-card" aria-hidden="true"><p>"Eu tinha muitas manchas de espinha. Aprendi a usar os ácidos e já estão bem mais clarinhas."</p><span>Ácidos sem medo</span></div><div class="v-card" aria-hidden="true"><p>"Eu até imprimi o checklist e colei no espelho pra não esquecer de fazer."</p><span>Checklist</span></div><div class="v-card" aria-hidden="true"><p>"Parei de gastar com produto errado. Minha rotina inteira saiu mais barata que um sérum."</p><span>Economia</span></div></div>
       <div class="v-row rev"><div class="v-card"><p>"Finalmente descobri que minha pele é mista. Tudo fez sentido!"</p><span>Tipo de pele</span></div><div class="v-card"><p>"Saí só de protetor com cor e minha amiga perguntou o que eu fiz na pele."</p><span>Elogios</span></div><div class="v-card"><p>"Hoje sei exatamente o que passar de manhã e à noite, sem ficar na dúvida."</p><span>Manhã e noite</span></div><div class="v-card"><p>"Minha pele oleosa parou de brilhar no meio da tarde."</p><span>Pele oleosa</span></div><div class="v-card" aria-hidden="true"><p>"Finalmente descobri que minha pele é mista. Tudo fez sentido!"</p><span>Tipo de pele</span></div><div class="v-card" aria-hidden="true"><p>"Saí só de protetor com cor e minha amiga perguntou o que eu fiz na pele."</p><span>Elogios</span></div><div class="v-card" aria-hidden="true"><p>"Hoje sei exatamente o que passar de manhã e à noite, sem ficar na dúvida."</p><span>Manhã e noite</span></div><div class="v-card" aria-hidden="true"><p>"Minha pele oleosa parou de brilhar no meio da tarde."</p><span>Pele oleosa</span></div></div>
     </div>
-    <p class="closing">A culpa não é sua. Ninguém nunca te explicou o passo a passo.</p>
   </div>
 </section>
 
@@ -424,7 +443,7 @@ footer p+p{margin-top:8px}
         <li><span>Ouvindo das amigas: <em>"Menina, o que você está usando?"</em></span></li>
         <li>Com a pele mais macia, uniforme e com aquele viço de saúde.</li>
       </ul>
-      <div class="photo-round"><img src="img/amigas.webp" alt="Amigas rindo juntas com a pele natural" loading="lazy" width="800" height="600"></div>
+      <div class="arch-photo" style="max-width:380px;margin-inline:auto;width:100%"><img src="img/novo2.webp" alt="Mulher aplicando sérum com conta-gotas em frente ao espelho" loading="lazy" width="277" height="406"></div>
     </div>
     <div class="cta-block"><a class="btn cta" href="https://pay.kiwify.com.br/qnsgOve">Quero minha pele de porcelana ✨</a></div>
   </div>
@@ -562,16 +581,20 @@ footer p+p{margin-top:8px}
 </section>
 
 <!-- ============ 12. CTA FINAL ============ -->
-<section class="final">
+<section class="final brands-final">
   <div class="wrap final-grid">
-    <div class="arch-photo"><img src="img/final.webp" alt="Mulher sorrindo com a pele natural e iluminada" loading="lazy" width="560" height="700"></div>
+    <div class="brand-wall" aria-label="Marcas indicadas no guia: La Roche-Posay, CeraVe, Principia, Sallve, Creamy, The Ordinary, Bioderma, Avène, Vichy, Eucerin, Episol, ISDIN, Neutrogena, Cetaphil, Garnier, Nivea, Mantecorp, Darrow">
+        <ul class="bcol up"><li>La Roche-Posay</li><li>Sallve</li><li>Bioderma</li><li>Eucerin</li><li>Neutrogena</li><li>Nivea</li><li aria-hidden="true">La Roche-Posay</li><li aria-hidden="true">Sallve</li><li aria-hidden="true">Bioderma</li><li aria-hidden="true">Eucerin</li><li aria-hidden="true">Neutrogena</li><li aria-hidden="true">Nivea</li></ul><ul class="bcol down"><li>CeraVe</li><li>Creamy</li><li>Avène</li><li>Episol</li><li>Cetaphil</li><li>Mantecorp</li><li aria-hidden="true">CeraVe</li><li aria-hidden="true">Creamy</li><li aria-hidden="true">Avène</li><li aria-hidden="true">Episol</li><li aria-hidden="true">Cetaphil</li><li aria-hidden="true">Mantecorp</li></ul><ul class="bcol up slow"><li>Principia</li><li>The Ordinary</li><li>Vichy</li><li>ISDIN</li><li>Garnier</li><li>Darrow</li><li aria-hidden="true">Principia</li><li aria-hidden="true">The Ordinary</li><li aria-hidden="true">Vichy</li><li aria-hidden="true">ISDIN</li><li aria-hidden="true">Garnier</li><li aria-hidden="true">Darrow</li></ul>
+      </div>
     <div class="stack center-sm">
-      <h2>Sua pele de porcelana começa hoje, com o <em>primeiro passo certo.</em></h2>
-      <p class="lead">Daqui a 21 dias você vai agradecer por não ter deixado para depois.</p>
+      <span class="eyebrow">Comunidade Bela Pele Brasil</span>
+      <h2>As marcas que o guia indica, com <em>desconto para você.</em></h2>
+      <p class="lead">Dentro do grupo você recebe cupons e promoções das marcas que aparecem no e-book, das opções de farmácia às premium. Assim a sua rotina sai ainda mais barata.</p>
       <div class="cta-block" style="align-items:flex-start"><a class="btn breathe cta" href="https://pay.kiwify.com.br/qnsgOve">Quero minha pele de porcelana ✨</a><p class="btn-note">Acesso imediato · Garantia de 7 dias</p></div>
     </div>
   </div>
 </section>
+
 
 <footer>
   <div class="wrap">
