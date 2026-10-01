@@ -173,8 +173,20 @@ section{padding-block:64px}
 .app .lead{color:#F3E4E0}
 .app-grid{display:grid;gap:34px;align-items:center;margin-top:30px}
 @media (min-width:860px){.app-grid{grid-template-columns:.8fr 1.2fr}}
-.mock{width:250px;max-width:100%;margin-inline:auto;background:#1a1416;border-radius:36px;padding:10px;box-shadow:0 30px 60px rgba(0,0,0,.35)}
-.screen{background:#FBF5F2;border-radius:28px;overflow:hidden;color:#3A2A2C;font-size:11px;line-height:1.4;padding:16px 12px 12px}
+.mock{position:relative;width:286px;max-width:100%;margin-inline:auto;border-radius:48px;padding:11px;
+ background:linear-gradient(145deg,#4a3a3e,#1b1416 35%,#2a2023 65%,#0f0b0c);
+ box-shadow:0 0 0 2px #6b585d inset,0 0 0 1px #0d0a0b,0 40px 80px rgba(0,0,0,.45),0 0 60px rgba(243,201,193,.15);transform:rotate(-3deg)}
+.mock::before{content:"";position:absolute;left:-3px;top:110px;width:3px;height:54px;border-radius:2px 0 0 2px;background:#3a2d31;box-shadow:0 70px 0 #3a2d31}
+.mock::after{content:"";position:absolute;right:-3px;top:150px;width:3px;height:80px;border-radius:0 2px 2px 0;background:#3a2d31}
+.mock .island{position:absolute;top:22px;left:50%;transform:translateX(-50%);width:86px;height:25px;border-radius:20px;background:#000;z-index:3}
+.mock .glass{position:absolute;inset:11px;border-radius:38px;pointer-events:none;z-index:4;background:linear-gradient(120deg,rgba(255,255,255,.18) 0%,rgba(255,255,255,0) 28%)}
+.screen .status{display:flex;justify-content:space-between;align-items:center;font-size:11px;font-weight:600;padding:0 10px 10px;color:#3A2A2C}
+.screen .status i{font-style:normal;letter-spacing:1px;font-size:10px}
+.screen .tabs{display:flex;justify-content:space-around;margin:12px -12px -12px;padding:10px 6px 16px;background:#fff;border-top:1px solid #F0E2DD;font-size:9px;color:#9C8A8C;text-align:center}
+.screen .tabs b{display:block;font-size:15px;line-height:1.2}
+.screen .tabs span.on{color:#5B2633;font-weight:600}
+.screen .home{width:90px;height:4px;border-radius:4px;background:#2b2023;margin:8px auto 0}
+.screen{background:#FBF5F2;border-radius:38px;overflow:hidden;color:#3A2A2C;font-size:11.5px;line-height:1.4;padding:16px 14px 6px}
 .screen .br{font-family:var(--logo);font-style:italic;font-weight:600;color:#9C5650;font-size:12.5px}
 .screen .hd{display:flex;gap:10px;align-items:center;margin:10px 0 12px}
 .screen .ring{width:52px;height:52px;border-radius:50%;background:conic-gradient(#B96F68 0 14%,#EAD9D2 14% 100%);display:grid;place-items:center;flex:none}
@@ -408,13 +420,17 @@ footer p+p{margin-top:8px}
     </div>
     <div class="app-grid">
       <div class="mock" aria-label="Tela do app com a rotina do dia">
+        <div class="island"></div><div class="glass"></div>
         <div class="screen">
-          <div class="br">Pele de Porcelana</div>
+          <div class="status"><span>9:41</span><i>▂▄▆ ▮</i></div>
+          <div class="br" style="margin-top:14px">Pele de Porcelana</div>
           <div class="hd"><div class="ring"><b>3</b></div><div><strong>Oi, linda</strong>Semana 1 · Base</div></div>
           <div class="blk am"><div class="lbl">Manhã · 3/4</div>
             <div class="st"><i class="on"></i>Limpeza</div><div class="st"><i class="on"></i>Hidratante</div><div class="st"><i class="on"></i>Protetor FPS 50</div><div class="st"><i></i>Reaplicar protetor</div></div>
           <div class="blk pm"><div class="lbl">Noite</div>
             <div class="st"><i></i>Limpeza</div><div class="st"><i></i>Sérum<span class="tag">ativo</span></div><div class="st"><i></i>Hidratante noturno</div></div>
+          <div class="tabs"><span class="on"><b>☀︎</b>Hoje</span><span><b>🗓</b>Ativos</span><span><b>📸</b>Diário</span><span><b>⚙︎</b>Ajustes</span></div>
+          <div class="home"></div>
         </div>
       </div>
       <div class="app-feats">
@@ -424,7 +440,7 @@ footer p+p{margin-top:8px}
         <div class="feat"><i>📸</i><h3>Diário de evolução</h3><p>Fotos e anotações para você ver a sua pele mudando.</p></div>
       </div>
     </div>
-    <div class="cta-block"><a class="btn cta" href="https://pay.kiwify.com.br/qnsgOve" style="background:#F3DCD6;color:var(--wine)">Quero o guia + 7 dias grátis ✨</a></div>
+    <div class="cta-block"><a class="btn cta" href="https://pay.kiwify.com.br/qnsgOve" style="background:#F3DCD6;color:var(--wine)">Quero o guia + 7 dias app grátis ✨</a></div>
   </div>
 </section>
 
@@ -531,8 +547,7 @@ footer p+p{margin-top:8px}
     <a class="logo" href="#topo" aria-label="Voltar ao topo"><span class="arch" aria-hidden="true"></span><b>Pele de <i>Porcelana</i></b><span>em <strong>21</strong> dias</span></a>
     <nav><a href="termos.html">Termos de uso</a><a href="privacidade.html">Política de privacidade</a></nav>
     <p>Este material é educativo e não substitui a consulta com dermatologista. Os resultados variam de pessoa para pessoa.</p>
-    <p><span data-company>[SEU NOME OU EMPRESA] · CNPJ/CPF [000.000.000-00]</span></p>
-    <p>Suporte: <span data-support>[seu-email@dominio.com]</span></p>
+    <p>Suporte: <a data-support href="mailto:Peledeporcelana21@gmail.com">Peledeporcelana21@gmail.com</a></p>
     <p>© <span id="year">2026</span> Pele de Porcelana em 21 Dias. Todos os direitos reservados.</p>
   </div>
 </footer>
@@ -550,8 +565,7 @@ var CONFIG = {
   ancora:     "97,00",       // preço "de". Deixe "" para esconder o preço riscado
   parcelas:   "ou em até 5x no cartão",
   plataforma: "Kiwify",      // aparece no selo de pagamento
-  empresa:    "[SEU NOME OU EMPRESA] · CNPJ/CPF [000.000.000-00]",
-  suporte:    "[seu-email@dominio.com]"
+  suporte:    "Peledeporcelana21@gmail.com"
 };
 /* ================================================================ */
 (function(){
@@ -561,7 +575,6 @@ var CONFIG = {
   if(!CONFIG.ancora){var w=document.querySelector("[data-anchor-wrap]");if(w)w.textContent="Tudo isso por apenas";}
   document.querySelectorAll("[data-installments]").forEach(function(e){e.textContent=CONFIG.parcelas});
   var pl=document.getElementById("platform");if(pl)pl.textContent="💳 Pagamento via "+CONFIG.plataforma;
-  document.querySelectorAll("[data-company]").forEach(function(e){e.textContent=CONFIG.empresa});
   document.querySelectorAll("[data-support]").forEach(function(e){e.textContent=CONFIG.suporte});
   document.getElementById("year").textContent=new Date().getFullYear();
 
